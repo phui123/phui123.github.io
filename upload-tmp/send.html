@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>send</title>
+<script>
+// Temporary helper: sends one screenshot to the page that embeds this one.
+const name = new URLSearchParams(location.search).get('f');
+fetch('61/' + name).then(r => r.blob()).then(b => parent.postMessage({name, blob: b}, 'https://appstoreconnect.apple.com'));
+</script>
